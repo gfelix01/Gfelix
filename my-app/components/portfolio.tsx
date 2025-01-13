@@ -312,7 +312,7 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
 
           {/* Download CV Section */}
           <section id="cv" className="py-20 text-center">
-            <motion.a href="/my-app/public/CV.pdf" download className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.a href="/cv.pdf" download className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Download className="mr-2" />
               Descargar CV
             </motion.a>
