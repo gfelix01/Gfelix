@@ -79,7 +79,7 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
               </button>
             </div>
             <div className="md:hidden">
-              <button onClick={toggleMenu} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+              <button onClick={toggleMenu} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700" title="Toggle Menu">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -99,7 +99,7 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
               className="fixed inset-y-0 right-0 w-64 bg-white dark:bg-gray-800 shadow-lg z-20 p-4"
             >
               <div className="flex justify-end">
-                <button onClick={toggleMenu} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                <button onClick={toggleMenu} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700" title="Toggle Menu">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -324,13 +324,13 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
         <footer className="bg-white dark:bg-gray-800 py-6 mt-20">
           <div className="container mx-auto px-6 text-center">
             <div className="flex justify-center space-x-4 mb-4">
-              <a href="https://github.com/gfelix01" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/gfelix01" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
                 <Github className="w-6 h-6" />
               </a>
-              <a href="https://www.linkedin.com/in/arturo-felix/" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/arturo-felix/" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://www.threads.net/@arturo01.js" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.threads.net/@arturo01.js" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="Threads Profile">
                 <Twitter className="w-6 h-6" />
               </a>
             </div>
