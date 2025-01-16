@@ -15,6 +15,8 @@ const geistMono = localFont({
 });
 
 
+
+
 export const metadata = {
   title: "Gabriel's Portfolio | Software Engineer",
   description: "Software Engineer Portfolio",
