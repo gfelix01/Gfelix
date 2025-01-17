@@ -8,10 +8,10 @@ import IconCloud from "../components/ui/icon-cloud";
 
 // IconCloud Slugs
 const slugs = [
-  "typescript", "javascript", "", "mongodb", "react", 
-  "html5", "css3",  "express", "prisma", "nextdotjs",
-  "firebase",  "vercel", "oracle", "postgresql", "mysql", "mongodb",
-   "git", "nodedotjs", "github", "gitlab", "visualstudiocode", "figma"
+  "typescript", "javascript", "mongodb", "react", "nextdotjs",
+  "html5", "css3", "express", "prisma", "nextdotjs", "Dynamics365", "PowerBI",
+  "firebase", "vercel", "oracle", "mysql", "mongodb",
+  "git", "github", "visualstudiocode", "figma", "nodejs", "docker", "kubernetes", "tailwindcss", "sass", "jest", "graphql"
 ];
 
 export default function Portfolio() {
@@ -139,10 +139,10 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
                 </motion.div>
               </motion.div>
               <motion.h1 initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-4xl font-bold mb-4">
-                Front End Developer👨🏾‍💻
+              Software Developer
               </motion.h1>
               <motion.p initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} className="text-xl mb-8">
-                Creando experiencias web únicas y atractivas
+                Creando experiencias digitales increíbles
               </motion.p>
               <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: 0.6 }} className="flex justify-center space-x-4">
                 <a href="#contact" className="bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">Contáctame</a>
@@ -160,99 +160,176 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
                   Soy un apasionado Desarrollador de Software, con experiencia en la creación de aplicaciones modernas y responsivas. Mi enfoque se centra en proporcionar soluciones eficientes y escalables utilizando las últimas tecnologías del mercado.
                 </p>
                 <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                  Además, soy Consultor funcional de Dynamic 365 y Power BI, ayudando a las empresas a optimizar sus procesos y tomar decisiones basadas en datos.
+                </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                   Con una sólida base en React JS, JavaScript, Next.js, CSS3 y Node.js, me esfuerzo por crear experiencias de usuario excepcionales y código limpio y mantenible.
                 </p>
               </div>
             </div>
           </section>
+{/* Projects Section */}
+<section id="projects" className="py-20">
+  <h2 className="text-3xl font-bold mb-8 text-center">Proyectos</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[
+      {
+        title: "WEB Fundacion y Ministerio FUMMHOR",
+        description: "WEB Fundación y Ministerio FUMMHOR es un sitio web desarrollado para una fundación evangélica, diseñado con WordPress y Elementor.",
+        tech: ["Wordpress", "Elementor PRO", "PHP"],
+        image: "/images/projects/Fummhor.png",
+        link: "https://fummhor.com",
+      },
+      {
+        title: "Clon-Movies",
+        description: "Clon-Movies es una aplicación web para explorar una variedad de películas. Desarrollada con React.js y Tailwind CSS.",
+        tech: ["React.js", "Tailwind CSS"],
+        image: "/images/projects/clon.png",
+        link: "https://clon-movie.vercel.app/",
+      },
+      {
+        title: "Andamios Web",
+        description: "Andamios del Este es una página web informativa diseñada para proporcionar detalles sobre los servicios y productos de la empresa. Desarrollada en WordPress y utilizando el constructor visual Divi.",
+        tech: ["Wordpress", "Divi", "PHP", "Crips"],
+        image: "/images/projects/Andamios.png",
+        link: "https://andamiosdeleste.com.do",
+      },
+      {
+        title: "Aplicacion de presupuesto",
+        description: "Aplicación de presupuesto es una herramienta web para gestionar y controlar el presupuesto personal. Permite a los usuarios registrar ingresos y gastos, y proporciona gráficos para visualizar el balance financiero.",
+        tech: ["JavaScript ES6", "CSS3", "HTML5"],
+        image: "/images/projects/presupuesto.png",
+        link: "https://aplicacion-de-presupuesto.vercel.app/",
+      },
+      {
+        title: "Clon Testimonios FreeCodeCamp",
+        description: "Este proyecto es un clon de la sección de testimonios de FreeCodeCamp, diseñado para replicar su funcionalidad y estética.",
+        tech: ["React JS", "CSS3", "HTML5"],
+        image: "/images/projects/testimonios.png",
+        link: "https://testimonios-freecodecamp-lemon.vercel.app/",
+      },
+    ].map((project, index) => (
+      <motion.div
+        key={index}
+        className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Image
+          src={project.image}
+          alt={`Imagen del proyecto ${project.title}`}
+          width={400}
+          height={200}
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600 transition duration-300"
+          >
+            Ver más →
+          </a>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
 
-          {/* Projects Section */}
-          <section id="projects" className="py-20">
-            <h2 className="text-3xl font-bold mb-8 text-center">Proyectos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "WEB Fundacion y Ministerio FUMMHOR",
-                  description: "WEB Fundación y Ministerio FUMMHOR es un sitio web desarrollado para una fundación evangélica, diseñado con WordPress y Elementor.",
-                  tech: ["Wordpress", "Elementor PRO", "PHP"],
-                  image: "/images/projects/Fummhor.png",
-                  link: "https://fummhor.com"
-                },
-                {
-                  title: "Clon-Movies",
-                  description: "Clon-Movies es una aplicación web para explorar una variedad de películas. Desarrollada con React.js y Tailwind CSS.",
-                  tech: ["React.js", "Tailwind CSS"],
-                  image: "/images/projects/clon.png",
-                  link: "https://clon-movie.vercel.app/"
-                },
-                {
-                  title: "Andamios Web",
-                  description: "Andamios del Este es una página web informativa diseñada para proporcionar detalles sobre los servicios y productos de la empresa. Desarrollada en WordPress y utilizando el constructor visual Divi.", 
-                  tech: ["Wordpress", "Divi", "PHP", "Crips"],
-                  image: "/images/projects/Andamios.png",
-                  link: "https://andamiosdeleste.com.do" // 
-                },
-                {
-                  title: "API Pokedex",
-                  description: "API Pokedex es una aplicación web que permite a los usuarios explorar una extensa colección de Pokémon a través de una API dedicada. Desarrollada utilizando JavaScript, CSS3 y HTML5, ",
-                  tech: ["JavaScript ES6", "CSS3", "HTML5"],
-                  image: "/images/projects/pokedex.png",
-                  link: "https://pokedex-tan-nu.vercel.app/" // Reemplaza con el enlace real
-                },
-                {
-                  title: "Aplicacion de presupuesto",
-                  description: "Aplicación de presupuesto es una herramienta web para gestionar y controlar el presupuesto personal. Permite a los usuarios registrar ingresos y gastos, y proporciona gráficos para visualizar el balance financiero. Desarrollada utilizando JavaScript, CSS3 y HTML5, la aplicación está diseñada para ser intuitiva y responsive.",
-                  tech: ["JavaScript ES6", "CSS3", "HTML5"],
-                  image: "/images/projects/presupuesto.png",
-                  link: "https://aplicacion-de-presupuesto.vercel.app/" // Reemplaza con el enlace real
-                },
-                {
-                  title: "Clon Testimonios FreeCodeCamp",
-                  description: "Este proyecto es un clon de la sección de testimonios de FreeCodeCamp, diseñado para replicar su funcionalidad y estética. Desarrollado con React JS, CSS3 y HTML5, el sitio recrea de manera precisa la presentación visual y el comportamiento interactivo de los testimonios. Es totalmente responsive",
-                  tech: ["React JS", "CSS3", "HTML5"],
-                  image: "/images/projects/testimonios.png",
-                  link: "https://testimonios-freecodecamp-lemon.vercel.app/"
-                }
-
-              ].map((project, index) => (
-                <motion.div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <Image
-                    src={project.image}
-                    alt={`Imagen del proyecto ${project.title}`}
-                    width={400}
-                    height={200}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tech.map((tech, techIndex) => (
-                        <span key={techIndex} className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 transition duration-300">Ver más →</a>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-{/* Skills Section */}
-<section id="skills" className="py-20">
-  <h2 className="text-3xl font-bold mb-8 text-center text-black">Habilidades</h2>
-  <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-background bg-opacity-10 dark:bg-gray-800 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
-    <IconCloudWrapper iconSlugs={slugs} className="text-black dark:text-white" />
+{/* Data Analysis Projects Section */}
+<section id="data-analysis-projects" className="py-20">
+  <h2 className="text-3xl font-bold mb-8 text-center">Proyectos de Análisis de Datos</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {[
+      {
+        title: "Dashboard de Ventas Regionales",
+        description:
+          "Este dashboard en Power BI muestra ventas totales por región, cliente y producto, permitiendo identificar tendencias y oportunidades de mercado.",
+        tech: ["Power BI", "SQL Server", "DAX"],
+        image: "/images/projects/Dashboard.png",
+        link: "#", // Enlace real aquí
+      },
+      {
+        title: "Análisis de Servicio al Cliente",
+        description:
+          "Herramienta que analiza productos no vendidos, segmentando por vendedor y cliente, con visualizaciones de tendencias semanales.",
+        tech: ["Power BI", "Excel", "DAX"],
+        image: "/images/projects/Servicio.png",
+        link: "#", // Enlace real aquí
+      },
+      {
+        title: "Mapeo de empleados",
+        description:
+          "Dashboard que muestra la ubicación de empleados en tiempo real, con información sobre la cantidad de empleados por región y departamento.",
+        tech: ["Power BI", "DAX", "SQL Server"],
+        image: "/images/projects/Personal.png",
+        link: "#", // Enlace real aquí
+      },
+    ].map((project, index) => (
+      <motion.div
+        key={index}
+        className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Image
+          src={project.image}
+          alt={`Imagen del proyecto ${project.title}`}
+          width={400}
+          height={200}
+          className="w-full h-48 object-cover"
+        />
+        <div className="p-6">
+          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tech.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-600 transition duration-300"
+          >
+            Ver más →
+          </a>
+        </div>
+      </motion.div>
+    ))}
   </div>
 </section>
 
 
+{/* Skills Section */}
+<section id="skills" className="py-20 transition-colors duration-300">
+  <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">
+    Habilidades
+  </h2>
+  <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-gray-100 dark:bg-gray-800 bg-opacity-10 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
+    <IconCloudWrapper iconSlugs={slugs} className="text-gray-900 dark:text-gray-100" />
+  </div>
+</section>
 
-
-
-              
 
           {/* Contact Form */}
           <form id="contact" action="https://formspree.io/f/meojwdll" method="POST" className="max-w-lg mx-auto">
@@ -311,12 +388,19 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
 
 
           {/* Download CV Section */}
-          <section id="cv" className="py-20 text-center">
-            <motion.a href="/my-app/public/cv.pdf" download className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              <Download className="mr-2" />
-              Descargar CV
-            </motion.a>
-          </section>
+<section id="cv" className="py-20 text-center">
+  <motion.a 
+    href="/cv.pdf" 
+    download 
+    className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300" 
+    whileHover={{ scale: 1.1 }} 
+    whileTap={{ scale: 0.9 }}
+  >
+    <Download className="mr-2" />
+    Descargar CV
+  </motion.a>
+</section>
+
 
         </main>
 
