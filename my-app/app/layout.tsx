@@ -21,10 +21,11 @@ const geistMono = localFont({
 export const metadata = {
   title: "Gabriel's Portfolio | Software Engineer",
   description: "Software Engineer Portfolio",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
     
 
