@@ -421,7 +421,34 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
           </div>
         </footer>
 
+        <WhatsappButton />
       </div>
     </div>
   );
 }
+const whatsappLink = "https://wa.me/18293027559?text=Hola%20me%20gustaría%20contactarte"; 
+// Reemplaza "18291234567" con tu número de WhatsApp Business, incluyendo el código de país (sin el símbolo "+").
+
+const WhatsappButton: React.FC = () => {
+  return (
+    <a
+      href={whatsappLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 duration-300"
+      title="Contactar por WhatsApp"
+      aria-label="Contactar por WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 32 32"
+        className="w-6 h-6"
+        fill="white"
+      >
+        <path d="M16.01 1C7.74 1 1 7.745 1 16.005c0 2.86.748 5.673 2.174 8.126l-1.441 5.277 5.39-1.411A15.028 15.028 0 0 0 16 31c8.26 0 14.995-6.735 14.995-14.995C30.995 7.745 24.26 1 16.01 1Zm8.687 22.158c-.377 1.045-2.187 1.99-3.055 2.067-.78.062-1.391.294-4.891-1.039-4.136-1.601-6.79-5.542-6.995-5.797-.205-.254-1.67-2.22-1.67-4.234 0-2.014 1.046-3.009 1.417-3.424.372-.415.83-.519 1.106-.519.275 0 .554 0 .797.015.26.01.603-.1.943.716.377.888 1.291 3.088 1.402 3.31.11.222.183.483.033.774-.15.292-.225.47-.438.72-.216.247-.457.554-.65.744-.217.212-.442.443-.19.871.253.428 1.13 1.86 2.431 2.99 1.67 1.444 3.08 1.894 3.507 2.101.428.206.834.183 1.146-.11.312-.294 1.332-1.51 1.686-2.034.354-.525.723-.432 1.216-.257.494.174 3.134 1.478 3.673 1.742.54.264.901.416 1.034.644.133.228.133 1.047-.243 2.093Z" />
+      </svg>
+    </a>
+  );
+};
+
+export { WhatsappButton };
