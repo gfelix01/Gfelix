@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Download, Send,Github,Twitter, Linkedin, } from 'lucide-react';
+import { Sun, Moon, Download, Send, Github, Twitter, Linkedin, } from 'lucide-react';
 import Image from 'next/image';
 import IconCloud from "../components/ui/icon-cloud";
 
@@ -27,32 +27,47 @@ export default function Portfolio() {
 
   const toggleDarkMode = () => {
     setDarkMode(prevMode => {
-        const newMode = !prevMode;
-        localStorage.setItem('darkMode', newMode.toString());
+      const newMode = !prevMode;
+      localStorage.setItem('darkMode', newMode.toString());
 
-        return newMode;
+      return newMode;
     });
-};
+  };
+  useEffect(() => {
+    const gtmScript = document.createElement('script');
+    gtmScript.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-W2CVXX4G';
+    gtmScript.async = true;
+    document.head.appendChild(gtmScript);
 
-interface IconCloudWrapperProps {
-  iconSlugs: string[];
-  className?: string;
-}
+    const gtmNoscript = document.createElement('noscript');
+    gtmNoscript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2CVXX4G" height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+    document.body.appendChild(gtmNoscript);
 
-const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, className }) => {
-  return (
-    <div className={className}>
-      <IconCloud iconSlugs={iconSlugs} />
+    return () => {
+      document.head.removeChild(gtmScript);
+      document.body.removeChild(gtmNoscript);
+    };
+  }, []);
+
+  interface IconCloudWrapperProps {
+    iconSlugs: string[];
+    className?: string;
+  }
+
+  const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, className }) => {
+    return (
+      <div className={className}>
+        <IconCloud iconSlugs={iconSlugs} />
+      </div>
+    );
+  };
+  {/* Skills Section */ }
+  <section id="skills" className="py-20">
+    <h2 className="text-3xl font-bold mb-8 text-center text-white">Habilidades</h2>
+    <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-background bg-opacity-10 dark:bg-gray-800 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
+      <IconCloudWrapper iconSlugs={slugs} className="text-black dark:text-white" />
     </div>
-  );
-};
-{/* Skills Section */}
-<section id="skills" className="py-20">
-  <h2 className="text-3xl font-bold mb-8 text-center text-white">Habilidades</h2>
-  <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-background bg-opacity-10 dark:bg-gray-800 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
-    <IconCloudWrapper iconSlugs={slugs} className="text-black dark:text-white" />
-  </div>
-</section>
+  </section>
 
 
 
@@ -63,7 +78,7 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
   return (
     <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
       <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-900 dark:to-blue-900 min-h-screen text-gray-800 dark:text-white transition-colors duration-300">
-        
+
         {/* Navbar */}
         <nav className="fixed w-full bg-white bg-opacity-80 dark:bg-gray-800 dark:bg-opacity-80 backdrop-blur-sm z-10">
           <div className="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -75,7 +90,7 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
               <a href="#skills" onClick={() => setActiveSection('skills')} className={`nav-link ${activeSection === 'skills' ? 'text-blue-500' : ''}`}>Habilidades</a>
               <a href="#contact" onClick={() => setActiveSection('contact')} className={`nav-link ${activeSection === 'contact' ? 'text-blue-500' : ''}`}>Contacto</a>
               <a href="#blog" onClick={() => setActiveSection('blog')} className={`nav-link ${activeSection === 'blog' ? 'text-blue-500' : ''}`}>Blog</a>
-              <button onClick={toggleDarkMode} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"aria-label={`Activar ${darkMode ? 'modo claro' : 'modo oscuro'}`}>
+              <button onClick={toggleDarkMode} className="p-2 rounded-full bg-gray-200 dark:bg-gray-700" aria-label={`Activar ${darkMode ? 'modo claro' : 'modo oscuro'}`}>
                 {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
             </div>
@@ -140,7 +155,7 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
                 </motion.div>
               </motion.div>
               <motion.h1 initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-4xl font-bold mb-4">
-              Software Developer
+                Software Developer
               </motion.h1>
               <motion.p initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} className="text-xl mb-8">
                 Creando experiencias digitales increíbles
@@ -169,167 +184,167 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
               </div>
             </div>
           </section>
-{/* Projects Section */}
-<section id="projects" className="py-20">
-  <h2 className="text-3xl font-bold mb-8 text-center">Proyectos</h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {[
-      {
-        title: "WEB Fundacion y Ministerio FUMMHOR",
-        description: "WEB Fundación y Ministerio FUMMHOR es un sitio web desarrollado para una fundación evangélica, diseñado con WordPress y Elementor.",
-        tech: ["Wordpress", "Elementor PRO", "PHP"],
-        image: "/images/projects/Fummhor.png",
-        link: "https://fummhor.com",
-      },
-      {
-        title: "Clon-Movies",
-        description: "Clon-Movies es una aplicación web para explorar una variedad de películas. Desarrollada con React.js y Tailwind CSS.",
-        tech: ["React.js", "Tailwind CSS"],
-        image: "/images/projects/clon.png",
-        link: "https://clon-movie.vercel.app/",
-      },
-      {
-        title: "Andamios Web",
-        description: "Andamios del Este es una página web informativa diseñada para proporcionar detalles sobre los servicios y productos de la empresa. Desarrollada en WordPress y utilizando el constructor visual Divi.",
-        tech: ["Wordpress", "Divi", "PHP", "Crips"],
-        image: "/images/projects/Andamios.png",
-        link: "https://andamiosdeleste.com.do",
-      },
-      {
-        title: "Aplicacion de presupuesto",
-        description: "Aplicación de presupuesto es una herramienta web para gestionar y controlar el presupuesto personal. Permite a los usuarios registrar ingresos y gastos, y proporciona gráficos para visualizar el balance financiero.",
-        tech: ["JavaScript ES6", "CSS3", "HTML5"],
-        image: "/images/projects/presupuesto.png",
-        link: "https://aplicacion-de-presupuesto.vercel.app/",
-      },
-      {
-        title: "Clon Testimonios FreeCodeCamp",
-        description: "Este proyecto es un clon de la sección de testimonios de FreeCodeCamp, diseñado para replicar su funcionalidad y estética.",
-        tech: ["React JS", "CSS3", "HTML5"],
-        image: "/images/projects/testimonios.png",
-        link: "https://testimonios-freecodecamp-lemon.vercel.app/",
-      },
-    ].map((project, index) => (
-      <motion.div
-        key={index}
-        className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Image
-          src={project.image}
-          alt={`Imagen del proyecto ${project.title}`}
-          width={400}
-          height={200}
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tech.map((tech, techIndex) => (
-              <span
-                key={techIndex}
-                className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-600 transition duration-300"
-          >
-            Ver más →
-          </a>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
+          {/* Projects Section */}
+          <section id="projects" className="py-20">
+            <h2 className="text-3xl font-bold mb-8 text-center">Proyectos</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "WEB Fundacion y Ministerio FUMMHOR",
+                  description: "WEB Fundación y Ministerio FUMMHOR es un sitio web desarrollado para una fundación evangélica, diseñado con WordPress y Elementor.",
+                  tech: ["Wordpress", "Elementor PRO", "PHP"],
+                  image: "/images/projects/Fummhor.png",
+                  link: "https://fummhor.com",
+                },
+                {
+                  title: "Clon-Movies",
+                  description: "Clon-Movies es una aplicación web para explorar una variedad de películas. Desarrollada con React.js y Tailwind CSS.",
+                  tech: ["React.js", "Tailwind CSS"],
+                  image: "/images/projects/clon.png",
+                  link: "https://clon-movie.vercel.app/",
+                },
+                {
+                  title: "Andamios Web",
+                  description: "Andamios del Este es una página web informativa diseñada para proporcionar detalles sobre los servicios y productos de la empresa. Desarrollada en WordPress y utilizando el constructor visual Divi.",
+                  tech: ["Wordpress", "Divi", "PHP", "Crips"],
+                  image: "/images/projects/Andamios.png",
+                  link: "https://andamiosdeleste.com.do",
+                },
+                {
+                  title: "Aplicacion de presupuesto",
+                  description: "Aplicación de presupuesto es una herramienta web para gestionar y controlar el presupuesto personal. Permite a los usuarios registrar ingresos y gastos, y proporciona gráficos para visualizar el balance financiero.",
+                  tech: ["JavaScript ES6", "CSS3", "HTML5"],
+                  image: "/images/projects/presupuesto.png",
+                  link: "https://aplicacion-de-presupuesto.vercel.app/",
+                },
+                {
+                  title: "Clon Testimonios FreeCodeCamp",
+                  description: "Este proyecto es un clon de la sección de testimonios de FreeCodeCamp, diseñado para replicar su funcionalidad y estética.",
+                  tech: ["React JS", "CSS3", "HTML5"],
+                  image: "/images/projects/testimonios.png",
+                  link: "https://testimonios-freecodecamp-lemon.vercel.app/",
+                },
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`Imagen del proyecto ${project.title}`}
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 transition duration-300"
+                    >
+                      Ver más →
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
 
-{/* Data Analysis Projects Section */}
-<section id="data-analysis-projects" className="py-20">
-  <h2 className="text-3xl font-bold mb-8 text-center">Proyectos de Análisis de Datos</h2>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {[
-      {
-        title: "Dashboard de Ventas Regionales",
-        description:
-          "Este dashboard en Power BI muestra ventas totales por región, cliente y producto, permitiendo identificar tendencias y oportunidades de mercado.",
-        tech: ["Power BI", "SQL Server", "DAX"],
-        image: "/images/projects/Dashboard.png",
-        link: "#", // Enlace real aquí
-      },
-      {
-        title: "Análisis de Servicio al Cliente",
-        description:
-          "Herramienta que analiza productos no vendidos, segmentando por vendedor y cliente, con visualizaciones de tendencias semanales.",
-        tech: ["Power BI", "Excel", "DAX"],
-        image: "/images/projects/Servicio.png",
-        link: "#", // Enlace real aquí
-      },
-      {
-        title: "Mapeo de empleados",
-        description:
-          "Dashboard que muestra la ubicación de empleados en tiempo real, con información sobre la cantidad de empleados por región y departamento.",
-        tech: ["Power BI", "DAX", "SQL Server"],
-        image: "/images/projects/Personal.png",
-        link: "#", // Enlace real aquí
-      },
-    ].map((project, index) => (
-      <motion.div
-        key={index}
-        className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Image
-          src={project.image}
-          alt={`Imagen del proyecto ${project.title}`}
-          width={400}
-          height={200}
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tech.map((tech, techIndex) => (
-              <span
-                key={techIndex}
-                className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-600 transition duration-300"
-          >
-            Ver más →
-          </a>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
+          {/* Data Analysis Projects Section */}
+          <section id="data-analysis-projects" className="py-20">
+            <h2 className="text-3xl font-bold mb-8 text-center">Proyectos de Análisis de Datos</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Dashboard de Ventas Regionales",
+                  description:
+                    "Este dashboard en Power BI muestra ventas totales por región, cliente y producto, permitiendo identificar tendencias y oportunidades de mercado.",
+                  tech: ["Power BI", "SQL Server", "DAX"],
+                  image: "/images/projects/Dashboard.png",
+                  link: "#", // Enlace real aquí
+                },
+                {
+                  title: "Análisis de Servicio al Cliente",
+                  description:
+                    "Herramienta que analiza productos no vendidos, segmentando por vendedor y cliente, con visualizaciones de tendencias semanales.",
+                  tech: ["Power BI", "Excel", "DAX"],
+                  image: "/images/projects/Servicio.png",
+                  link: "#", // Enlace real aquí
+                },
+                {
+                  title: "Mapeo de empleados",
+                  description:
+                    "Dashboard que muestra la ubicación de empleados en tiempo real, con información sobre la cantidad de empleados por región y departamento.",
+                  tech: ["Power BI", "DAX", "SQL Server"],
+                  image: "/images/projects/Personal.png",
+                  link: "#", // Enlace real aquí
+                },
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`Imagen del proyecto ${project.title}`}
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 transition duration-300"
+                    >
+                      Ver más →
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
 
 
-{/* Skills Section */}
-<section id="skills" className="py-20 transition-colors duration-300">
-  <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">
-    Habilidades
-  </h2>
-  <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-gray-100 dark:bg-gray-800 bg-opacity-10 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
-    <IconCloudWrapper iconSlugs={slugs} className="text-gray-900 dark:text-gray-100" />
-  </div>
-</section>
+          {/* Skills Section */}
+          <section id="skills" className="py-20 transition-colors duration-300">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100">
+              Habilidades
+            </h2>
+            <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-gray-100 dark:bg-gray-800 bg-opacity-10 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
+              <IconCloudWrapper iconSlugs={slugs} className="text-gray-900 dark:text-gray-100" />
+            </div>
+          </section>
 
 
           {/* Contact Form */}
@@ -352,54 +367,54 @@ const IconCloudWrapper: React.FC<IconCloudWrapperProps> = ({ iconSlugs, classNam
             </motion.button>
           </form>
 
-         {/* Blog Section */}
-<section id="blog" className="py-20">
-  <h2 className="text-3xl font-bold mb-8 text-center">Blog</h2>
-  <motion.div 
-    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto" 
-    initial={{ opacity: 0 }} 
-    animate={{ opacity: 1 }} 
-    transition={{ duration: 0.5 }}
-  >
-    {[
-      {
-        title: "Mejorando el rendimiento de React",
-        description: "Técnicas para optimizar el rendimiento en React.",
-        link: "https://es.legacy.reactjs.org/docs/optimizing-performance.html"
-      },
-      {
-        title: "Integración de APIs con Next.js",
-        description: "Aprende a integrar APIs en Next.js.",
-        link: "https://nextjs.org/docs/pages/building-your-application/routing/api-routes"
-      },
-      {
-        title: "Pasando funciones a componentes",
-        description: "¿Cómo puedo pasar un controlador de eventos (como onClick) a un componente?",
-        link: "https://es.legacy.reactjs.org/docs/faq-functions.html"
-      }
-    ].map((blog, index) => (
-      <motion.div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mx-auto">
-        <h3 className="text-xl font-bold mb-2 text-center">{blog.title}</h3>
-        <p className="text-gray-600 dark:text-gray-300 mb-4 text-center">{blog.description}</p>
-        <a href={blog.link} className="text-blue-500 hover:text-blue-600 transition duration-300 text-center block">Leer más →</a>
-      </motion.div>
-    ))}
-  </motion.div>
-</section>
+          {/* Blog Section */}
+          <section id="blog" className="py-20">
+            <h2 className="text-3xl font-bold mb-8 text-center">Blog</h2>
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {[
+                {
+                  title: "Mejorando el rendimiento de React",
+                  description: "Técnicas para optimizar el rendimiento en React.",
+                  link: "https://es.legacy.reactjs.org/docs/optimizing-performance.html"
+                },
+                {
+                  title: "Integración de APIs con Next.js",
+                  description: "Aprende a integrar APIs en Next.js.",
+                  link: "https://nextjs.org/docs/pages/building-your-application/routing/api-routes"
+                },
+                {
+                  title: "Pasando funciones a componentes",
+                  description: "¿Cómo puedo pasar un controlador de eventos (como onClick) a un componente?",
+                  link: "https://es.legacy.reactjs.org/docs/faq-functions.html"
+                }
+              ].map((blog, index) => (
+                <motion.div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mx-auto">
+                  <h3 className="text-xl font-bold mb-2 text-center">{blog.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-center">{blog.description}</p>
+                  <a href={blog.link} className="text-blue-500 hover:text-blue-600 transition duration-300 text-center block">Leer más →</a>
+                </motion.div>
+              ))}
+            </motion.div>
+          </section>
 
-{/* Download CV Section */}
-<section id="cv" className="py-20 text-center">
-  <motion.a 
-    href="/CV_Gabriel_Felix.pdf" 
-    download 
-    className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300" 
-    whileHover={{ scale: 1.1 }} 
-    whileTap={{ scale: 0.9 }}
-  >
-    <Download className="mr-2" />
-    Descargar CV
-  </motion.a>
-</section>
+          {/* Download CV Section */}
+          <section id="cv" className="py-20 text-center">
+            <motion.a
+              href="/CV_Gabriel_Felix.pdf"
+              download
+              className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Download className="mr-2" />
+              Descargar CV
+            </motion.a>
+          </section>
 
 
         </main>
