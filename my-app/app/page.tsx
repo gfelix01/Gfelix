@@ -1,7 +1,13 @@
 import PortfolioComponent from '@/components/portfolio';
 
 
+
 export default function Page() {
-  return <PortfolioComponent />
-          
+  return (
+    <div>
+      <PortfolioComponent />
+
+    </div>
+  );
+
 }
