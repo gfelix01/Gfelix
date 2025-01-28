@@ -286,13 +286,14 @@ export default function Portfolio() {
                   image: "/images/projects/Servicio.png",
                   link: "#", // Enlace real aquí
                 },
+
                 {
-                  title: "Mapeo de empleados",
+                  title: "Mapeo de empleados Análisis de Datos de Atención al Cliente con Python",
                   description:
-                    "Dashboard que muestra la ubicación de empleados en tiempo real, con información sobre la cantidad de empleados por región y departamento.",
-                  tech: ["Power BI", "DAX", "SQL Server"],
-                  image: "/images/projects/Personal.png",
-                  link: "#", // Enlace real aquí
+                    "Este proyecto se centra en el análisis y visualización de datos de atención al cliente para identificar áreas de mejora en el servicio. A través del procesamiento de métricas clave, como la duración de las llamadas, la velocidad de respuesta y el índice de satisfacción, buscamos obtener insights valiosos para optimizar la experiencia del cliente..",
+                  tech: ["Python 🐍", "Pandas", "Seaborn", "Matplotlib"],
+                  image: "/images/projects/DuracionPromedio.png,/images/projects/velocidad.png,/images/projects/satisfaccion.png",
+                  link: "https://github.com/gfelix01/Python", // Enlace real aquí
                 },
               ].map((project, index) => (
                 <motion.div
