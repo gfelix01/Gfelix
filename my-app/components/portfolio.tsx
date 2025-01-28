@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Download, Send, Github, Twitter, Linkedin, } from 'lucide-react';
+import { Sun, Moon, Download, Send, Linkedin } from 'lucide-react';
+import { SiGithub, SiGitter } from 'react-icons/si';
+import { FaTwitter } from 'react-icons/fa';
 import Image from 'next/image';
 import IconCloud from "../components/ui/icon-cloud";
 
@@ -292,7 +294,7 @@ export default function Portfolio() {
                   description:
                     "Este proyecto se centra en el análisis y visualización de datos de atención al cliente para identificar áreas de mejora en el servicio. A través del procesamiento de métricas clave, como la duración de las llamadas, la velocidad de respuesta y el índice de satisfacción, buscamos obtener insights valiosos para optimizar la experiencia del cliente..",
                   tech: ["Python 🐍", "Pandas", "Seaborn", "Matplotlib"],
-                  image: "/images/projects/DuracionPromedio.png,/images/projects/velocidad.png,/images/projects/satisfaccion.png",
+                  image: "/images/projects/Velocidad.png",
                   link: "https://github.com/gfelix01/Python", // Enlace real aquí
                 },
               ].map((project, index) => (
@@ -424,15 +426,14 @@ export default function Portfolio() {
         <footer className="bg-white dark:bg-gray-800 py-6 mt-20">
           <div className="container mx-auto px-6 text-center">
             <div className="flex justify-center space-x-4 mb-4">
-              <a href="https://github.com/gfelix01" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="GitHub Profile">
-                <Github className="w-6 h-6" />
-              </a>
+              <SiGithub className="w-6 h-6" />
+              <SiGithub className="w-6 h-6" />
               <a href="https://www.linkedin.com/in/arturo-felix/" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://www.threads.net/@arturo01.js" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="Threads Profile">
-                <Twitter className="w-6 h-6" />
-              </a>
+              <FaTwitter className="w-6 h-6" />
+              <FaTwitter className="w-6 h-6" />
+              <FaTwitter className="w-6 h-6" />
             </div>
             <p>&copy; {new Date().getFullYear()} Gabriel Felix ❤️‍🔥. Todos los derechos reservados.</p>
           </div>
