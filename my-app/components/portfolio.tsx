@@ -427,13 +427,12 @@ export default function Portfolio() {
           <div className="container mx-auto px-6 text-center">
             <div className="flex justify-center space-x-4 mb-4">
               <SiGithub className="w-6 h-6" />
-              <SiGithub className="w-6 h-6" />
+
               <a href="https://www.linkedin.com/in/arturo-felix/" className="text-gray-400 hover:text-blue-500 transition-colors duration-300" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile">
                 <Linkedin className="w-6 h-6" />
               </a>
               <FaTwitter className="w-6 h-6" />
-              <FaTwitter className="w-6 h-6" />
-              <FaTwitter className="w-6 h-6" />
+
             </div>
             <p>&copy; {new Date().getFullYear()} Gabriel Felix ❤️‍🔥. Todos los derechos reservados.</p>
           </div>
