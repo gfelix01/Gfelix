@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 // Cargar fuentes locales
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +28,6 @@ export const viewport = {
   initialScale: 1,
 };
 
-
 // Layout principal
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -53,7 +52,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-
 
       <Analytics />
       <body
