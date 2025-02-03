@@ -88,24 +88,13 @@ export default function Portfolio() {
       </div>
     );
   };
-  {
-    /* Skills Section */
-  }
-  <section id="skills" className="py-20">
-    <h2 className="text-3xl font-bold mb-8 text-center text-white">
-      Habilidades
-    </h2>
-    <div className="flex flex-col items-center justify-center max-w-lg mx-auto rounded-lg border bg-background bg-opacity-10 dark:bg-gray-800 px-8 pb-10 pt-8 shadow-lg transition-transform transform hover:scale-105">
-      <IconCloudWrapper
-        iconSlugs={slugs}
-        className="text-black dark:text-white"
-      />
-    </div>
-  </section>;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const fixedId = "canvas-container-fixed-id";
+  const fixedCanvasId = "canvas-fixed-id";
 
   return (
     <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>
@@ -306,6 +295,7 @@ export default function Portfolio() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5 }}
                 className="mb-8 relative"
+                id={fixedId}
               >
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%5Bremoval.ai%5D_2f421267-1c2e-4409-b275-1d66a51460fd-mi-foto-kfObB4u0aeGSSsfCWDzXd6FRYC9BMg.png"
@@ -313,6 +303,7 @@ export default function Portfolio() {
                   width={200}
                   height={200}
                   className="rounded-full mx-auto border-4 border-blue-500 shadow-lg"
+                  id={fixedCanvasId}
                 />
                 <motion.div
                   className="absolute -bottom-4 -right-4 bg-blue-500 rounded-full p-2"
