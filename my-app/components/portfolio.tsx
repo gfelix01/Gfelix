@@ -712,7 +712,7 @@ export default function Portfolio() {
               </a>
            
               <a
-          href="https://www.instagram.com/gfelix01"
+          href="https://www.instagram.com/arturo01.js/"
           className="text-gray-400 hover:text-pink-500 transition-colors duration-300"
           target="_blank"
           rel="noopener noreferrer"
