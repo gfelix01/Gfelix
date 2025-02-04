@@ -676,7 +676,7 @@ export default function Portfolio() {
           {/* Download CV Section */}
           <section id="cv" className="py-20 text-center">
             <motion.a
-              href="/CV_Gabriel_Felix.pdf"
+              href="/cv.pdf"
               download
               className="inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300"
               whileHover={{ scale: 1.1 }}
