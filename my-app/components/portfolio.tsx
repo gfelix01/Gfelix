@@ -7,6 +7,7 @@ import { SiGithub } from "react-icons/si";
 import Image from "next/image";
 import IconCloud from "../components/ui/icon-cloud";
 
+
 // IconCloud Slugs
 const slugs = [
   "typescript",
@@ -41,13 +42,8 @@ export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [fixedId, setFixedId] = useState("");
-  const [fixedCanvasId, setFixedCanvasId] = useState("");
-
-  useEffect(() => {
-    setFixedId("canvas-container-fixed-id");
-    setFixedCanvasId("canvas-fixed-id");
-  }, []);
+  const fixedId = "canvas-container-fixed";
+  const fixedCanvasId = "canvas-fixed";
 
   // Persist Dark Mode with localStorage
   useEffect(() => {
@@ -304,7 +300,7 @@ export default function Portfolio() {
                 id={fixedId}
               >
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%5Bremoval.ai%5D_2f421267-1c2e-4409-b275-1d66a51460fd-mi-foto-kfObB4u0aeGSSsfCWDzXd6FRYC9BMg.png"
+                  src="/images/Eltury.png"
                   alt="Foto de perfil de Gabriel Felix"
                   width={200}
                   height={200}
@@ -488,7 +484,7 @@ export default function Portfolio() {
                     "Este dashboard en Power BI muestra ventas totales por región, cliente y producto, permitiendo identificar tendencias y oportunidades de mercado.",
                   tech: ["Power BI", "SQL Server", "DAX"],
                   image: "/images/projects/Dashboard.png",
-                  link: "#", // Enlace real aquí
+                  link: "https://github.com/gfelix01/Python", // Enlace real aquí
                 },
                 {
                   title: "Análisis de Servicio al Cliente",
@@ -496,7 +492,7 @@ export default function Portfolio() {
                     "Herramienta que analiza productos no vendidos, segmentando por vendedor y cliente, con visualizaciones de tendencias semanales.",
                   tech: ["Power BI", "Excel", "DAX"],
                   image: "/images/projects/Servicio.png",
-                  link: "#", // Enlace real aquí
+                  link: "https://github.com/gfelix01/Python", // Enlace real aquí
                 },
 
                 {
@@ -692,38 +688,38 @@ export default function Portfolio() {
           <div className="container mx-auto px-6 text-center">
             <div className="flex justify-center space-x-4 mb-4">
               <a
-          href="https://github.com/gfelix01"
-          className="text-gray-400 hover:text-black transition-colors duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="GitHub Profile"
+                href="https://github.com/gfelix01"
+                className="text-gray-400 hover:text-black transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub Profile"
               >
-          <SiGithub className="w-6 h-6" />
+                <SiGithub className="w-6 h-6" />
               </a>
               <a
-          href="https://www.linkedin.com/in/arturo-felix/"
-          className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="LinkedIn Profile"
+                href="https://www.linkedin.com/in/arturo-felix/"
+                className="text-gray-400 hover:text-blue-500 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn Profile"
               >
-          <Linkedin className="w-6 h-6" />
+                <Linkedin className="w-6 h-6" />
               </a>
-           
+
               <a
-          href="https://www.instagram.com/arturo01.js/"
-          className="text-gray-400 hover:text-pink-500 transition-colors duration-300"
-          target="_blank"
-          rel="noopener noreferrer"
-          title="Instagram Profile"
+                href="https://www.instagram.com/arturo01.js/"
+                className="text-gray-400 hover:text-pink-500 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram Profile"
               >
-          <svg
-            className="w-6 h-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.281.058-2.563.334-3.637 1.408-1.074 1.074-1.35 2.356-1.408 3.637-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.281.334 2.563 1.408 3.637 1.074 1.074 2.356 1.35 3.637 1.408 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.281-.058 2.563-.334 3.637-1.408 1.074-1.074 1.35-2.356 1.408-3.637.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.281-.334-2.563-1.408-3.637-1.074-1.074-2.356-1.35-3.637-1.408-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.324c-2.297 0-4.162-1.865-4.162-4.162s1.865-4.162 4.162-4.162 4.162 1.865 4.162 4.162-1.865 4.162-4.162 4.162zm6.406-11.845c-.796 0-1.44.644-1.44 1.44s.644 1.44 1.44 1.44 1.44-.644 1.44-1.44-.644-1.44-1.44-1.44z" />
-          </svg>
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.248-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.248 3.608-1.31 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.281.058-2.563.334-3.637 1.408-1.074 1.074-1.35 2.356-1.408 3.637-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.058 1.281.334 2.563 1.408 3.637 1.074 1.074 2.356 1.35 3.637 1.408 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.281-.058 2.563-.334 3.637-1.408 1.074-1.074 1.35-2.356 1.408-3.637.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.058-1.281-.334-2.563-1.408-3.637-1.074-1.074-2.356-1.35-3.637-1.408-1.28-.058-1.688-.072-4.947-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.324c-2.297 0-4.162-1.865-4.162-4.162s1.865-4.162 4.162-4.162 4.162 1.865 4.162 4.162-1.865 4.162-4.162 4.162zm6.406-11.845c-.796 0-1.44.644-1.44 1.44s.644 1.44 1.44 1.44 1.44-.644 1.44-1.44-.644-1.44-1.44-1.44z" />
+                </svg>
               </a>
             </div>
             <p>
@@ -739,7 +735,7 @@ export default function Portfolio() {
   );
 }
 const whatsappLink =
-  "https://wa.me/18293027559?text=Hola%20me%20gustaría%20contactarte";
+  "https://wa.me/8099190625?text=Hola%20me%20gustaría%20contactarte";
 
 const WhatsappButton: React.FC = () => {
   return (
