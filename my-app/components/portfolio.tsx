@@ -310,7 +310,6 @@ export default function Portfolio() {
                   height={200}
                   className="rounded-full mx-auto border-4 border-blue-500 shadow-lg"
                   id={fixedCanvasId}
-                  loading="lazy"
                   decoding="async"
                 />
                 <motion.div
