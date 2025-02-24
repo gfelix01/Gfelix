@@ -395,12 +395,12 @@ export default function Portfolio() {
                   link: "https://fummhor.com",
                 },
                 {
-                  title: "Clon-Movies",
+                  title: "Dashboard de Ventas e inventario ",
                   description:
-                    "Clon-Movies es una aplicación web para explorar una variedad de películas. Desarrollada con React.js y Tailwind CSS.",
+                    " Dashboard de ventas e inventario es una aplicación web para gestionar y controlar las ventas y el inventario de una empresa. Permite a los usuarios registrar ventas, gestionar productos y visualizar informes de ventas.",
                   tech: ["React.js", "Tailwind CSS"],
-                  image: "/images/projects/clon.png",
-                  link: "https://clon-movie.vercel.app/",
+                  image: "/images/projects/inicio.png",
+                  link: "https://dashboard-de-ventas.vercel.app/",
                 },
                 {
                   title: "Andamios Web",
