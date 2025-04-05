@@ -192,7 +192,7 @@ export default function Portfolio() {
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ type: "tween" }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className="fixed inset-y-0 right-0 w-64 bg-white dark:bg-gray-800 shadow-lg z-20 p-4"
             >
               <div className="flex justify-end">
@@ -428,7 +428,7 @@ export default function Portfolio() {
               ].map((project, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -506,7 +506,7 @@ export default function Portfolio() {
               ].map((project, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >

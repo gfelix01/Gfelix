@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <meta name="theme-color" content="#ffffff" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -52,11 +53,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-
-      <Analytics />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 text-gray-900`}
       >
+        <Analytics />
         {children}
       </body>
     </html>
